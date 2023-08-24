@@ -1,11 +1,11 @@
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
+import { nanoid } from "nanoid";
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
-import { nanoid } from "nanoid";
 import { z } from "zod";
 
-export async function GET(request: Request) {
+export async function GET(request: Request, response: Response) {
   try {
     const user = await getServerSession(authOptions);
 

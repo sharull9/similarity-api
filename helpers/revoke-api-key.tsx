@@ -1,7 +1,7 @@
 import { CreateApiData } from "@/types/api/create-api";
 
-export async function CreateApiKey() {
-  const res = await fetch("/api/api-key/create");
+export async function RevokeApiKey() {
+  const res = await fetch("/api/api-key/revoke");
   const data = (await res.json()) as CreateApiData;
   if (data.error || !data.createdApiKey) {
     if (data.error instanceof Array) {

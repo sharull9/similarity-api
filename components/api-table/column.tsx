@@ -1,5 +1,4 @@
 "use client";
-import { ApiRequest } from "@prisma/client";
 import { ColumnDef } from "@tanstack/react-table";
 
 export type ApiProps = {

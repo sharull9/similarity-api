@@ -3,11 +3,12 @@ import { db } from "@/lib/db";
 import { formatDistance } from "date-fns";
 import { getServerSession } from "next-auth";
 import { notFound } from "next/navigation";
+import ApikeyOptions from "./api-key-options";
+import { columns } from "./api-table/column";
+import { DataTable } from "./api-table/table";
+import CopyButton from "./copy-button";
 import { Heading, Paragraph } from "./text-component";
 import { Input } from "./ui/input";
-import CopyButton from "./copy-button";
-import { DataTable } from "./api-table/table";
-import { columns } from "./api-table/column";
 
 const ApiDashboard = async ({}) => {
   const user = await getServerSession(authOptions);
@@ -50,7 +51,7 @@ const ApiDashboard = async ({}) => {
             valueToCopy={activeApiKey.key}
           />
         </div>
-        {/* <ApiKeyOptions apiKeyKey={activeApiKey.key} /> */}
+        <ApikeyOptions apiKey={activeApiKey.key} />
       </div>
       <Paragraph className="text-center md:text-left mt-4 -mb-4">
         Your API history:

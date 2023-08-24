@@ -3,8 +3,8 @@
 import {
   ColumnDef,
   flexRender,
-  getPaginationRowModel,
   getCoreRowModel,
+  getPaginationRowModel,
   useReactTable,
 } from "@tanstack/react-table";
 
@@ -16,7 +16,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Button } from "../ui/button";
 import { DataTablePagination } from "../pagination";
 
 interface DataTableProps<TData, TValue> {

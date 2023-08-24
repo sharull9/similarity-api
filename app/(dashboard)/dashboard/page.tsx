@@ -5,7 +5,6 @@ import { db } from "@/lib/db";
 import { Metadata } from "next";
 import { getServerSession } from "next-auth";
 import { notFound } from "next/navigation";
-import React from "react";
 
 export const metadata: Metadata = {
   title: "Similarity API | SHARULL | Dashboard",
@@ -23,7 +22,6 @@ export default async function Page() {
       enabled: true,
     },
   });
-
   return (
     <div className="max-w-7xl mx-auto mt-16">
       {apiKey ? <ApiKeyDashboard /> : <RequestApiKey />}
