@@ -42,6 +42,11 @@ export async function POST(request: Request) {
           model: "text-embedding-ada-002",
           input: text,
         });
+        const data = await openai.embeddings.create({
+          model: "text-embedding-ada-002",
+          input: text,
+        })
+        console.log(data)
         console.log(res.data);
         return res.data.data[0].embedding;
       })
